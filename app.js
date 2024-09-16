@@ -1,8 +1,8 @@
 const mongoose = require('mongoose')
 
-// mongoose.connect("mongodb+srv://muhidinshemsu3:hpInIu1U0hHJPuAS@cluster0.cd40j.mongodb.net/blogDB")
+mongoose.connect("mongodb+srv://muhidinshemsu3:hpInIu1U0hHJPuAS@cluster0.cd40j.mongodb.net/blogDB")
 
-mongoose.connect('mongodb://localhost:27017/blogDB')
+// mongoose.connect('mongodb://localhost:27017/blogDB')
 
 
 

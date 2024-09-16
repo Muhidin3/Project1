@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="This is a project for practice 
+    and it let's you create blog upload and delete(soon) author is muhidin shemsu">
+    <meta name="keywords" content="muhidin, shemsu, muhidinshemsu, muhidinblog, blog, ">
+    <title>MU Blog</title>
     <link rel="stylesheet" href="css.css">
+    <link rel="shortcut icon" href="Untitled-1.png" type="image/x-icon">
 </head>
 <body>
     <script src="js.js"></script>
@@ -17,7 +21,7 @@
                 <h1 class="title"><%-a[i].title%></h1>
                 <h3 class="content">
                     <%- a[i].content.slice(0,100) %> 
-                    <a href=<%-a[i].title.replace(' ','_')  %> style="font-size: 15px;">Read More</a>
+                    <a href=<%-a[i].title.replace(/ /g,'_')  %> style="font-size: 15px;">Read More</a>
                 </h3>
 
             </div>

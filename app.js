@@ -1,5 +1,10 @@
 const mongoose = require('mongoose')
-mongoose.connect("mongodb+srv://muhidinshemsu3:hpInIu1U0hHJPuAS@cluster0.cd40j.mongodb.net/blogDB")
+
+// mongoose.connect("mongodb+srv://muhidinshemsu3:hpInIu1U0hHJPuAS@cluster0.cd40j.mongodb.net/blogDB")
+
+mongoose.connect('mongodb://localhost:27017/blogDB')
+
+
 
 const express = require('express')
 const bodyParser = require('body-parser')
@@ -43,17 +48,19 @@ app.post('/compose',(req,res)=>{
     res.redirect('/')
     
 })
+app.get('/contact',(req,res)=>{
+    res.send('cnjdskns')
+})
 
 app.get('/:l',async (req,res)=>{
 
     let link = req.params.l
-    const eblog = await blog.find({title: link.replace('_',' ')})
+    const eblog = await blog.find({title: link.replace(/_/g,' ')})
     try {
-        await res.render('eachblog',{atitle:eblog[0].title,acontent:eblog[0].content}) 
+        res.render('eachblog',{atitle:eblog[0].title,acontent:eblog[0].content}) 
         
     } catch (error) {
         // console.error('that error')
-        
     }
     
 

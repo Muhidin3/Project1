@@ -3,6 +3,9 @@ body{
     box-sizing: border-box;
     margin: 0;
     min-width: 350px;
+    animation-name: headeranim;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
 }
 
 header{
@@ -12,6 +15,14 @@ header{
     display: block;
     width: 100%;
     z-index: 1;
+    animation-name: headeranim;
+    animation-duration: 30s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    
+}
+header img{
+    margin-left: 20px;
 }
 .header{
     padding: 0.2% ;
@@ -20,10 +31,30 @@ header{
 }
 header h1{
     display: inline-block;
-    color: #10403b;
     margin-bottom: 0;
     padding-left: 4%;
     padding-bottom: 10px;
+    position: relative;
+    animation-name: start;
+    animation-duration: 1s;
+    animation-delay: 0;
+}
+@keyframes start {
+    0%{right: 40px;
+        transform: rotate(-3deg);
+        opacity: 0;
+        }
+    50%{ transform: rotate(-3deg);}
+    100%{right: 0}
+}
+@keyframes headeranim {
+    0%{background-color: white;}
+    50%{background-color: #f4f8f8;}
+    100%{background-color: white;}   
+}
+@keyframes fade {
+    from{opacity: 0.5;}
+    to{opacity: 1;}
 }
 .navlink{
     display: block;
@@ -56,14 +87,18 @@ a{
 }
 .blogs{
     padding: 15px;
+    animation-name: fade;
+    animation-duration: 1s;
 }
 .blog{
     background-color: white;
     border-radius: 10px;
     padding: 10px 15px;
     padding-bottom: 20px;
-    margin-top: 15px;
-    box-shadow: 0px 1px 3px rgb(0, 0, 0) ;
+    margin-top: 20px;
+    border-top: 3px solid #10403b;
+    border-bottom: 3px solid #10403b;
+    /* box-shadow: 0px 1px 3px rgb(0, 0, 0) ; */
 }
 .title{
     color: #10403b;
@@ -74,14 +109,14 @@ a{
     padding-left: 10px;
 }
 .compose{
-    width: 200px;
-    height: 60px;
+    width: 150px;
+    height: 50px;
     background-color: #10403b;
     border-radius: 10px;
     color: white;
     text-align: center;
-    padding-top: 20px;
-    margin-top: 10px;
+    padding-top: 15px;
+    margin: 20px auto 0 auto;
 }
 .compose a{
     font-size: 30px;
@@ -121,7 +156,53 @@ button:active{
     background-color: #10403b;
     color: white;
 }
+.eblog{
+    padding: 20px;
+}
+.etitle{
+    font-size: 50px;
+}
+.econtent{
+    padding-left: 30px;
+}
 
+.form{
+    padding: 20px;
+}
+.form h1{
+    text-align: center;
+    font-size: 3rem;
+}
+.form label{
+    font-size: 1.7rem;
+}
+.form input{
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    border-bottom: 3px solid #10403b;
+    border-top: 3px solid #10403b;
+    background-color: #f5fafa;
+    color: #10403b;
+    width: 20%;
+    height: 30px
+}
+.form input:focus{
+    background-color: white;
+    color: black;
+    padding: 10px;
+    font-size: 1.3rem;
+    width: 30%;
+}
+.form textarea{
+    width: 100%;
+    font-size: 1.9rem;
+    border-radius: 5px;
+}
+.form textarea:focus{
+    padding: 10px;
+    width: 99%;
+}
 
 @media screen and (max-width:740px) {
     .navlink{

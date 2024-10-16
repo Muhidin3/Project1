@@ -24,13 +24,10 @@ const blogSchema = new mongoose.Schema({
 
 const blog = mongoose.model('blogs',blogSchema)
 
-app.get('/',(req,res)=>{
-    async function blogsee() {
-        let blogs = await blog.find()
-        
-        res.render('index',{a:blogs})
-    }
-    blogsee()
+app.get('/',async (req,res)=>{
+    let blogs = await blog.find()
+    res.render('index',{a:blogs})
+    
 })
 
 app.get('/compose',(req,res)=>{
@@ -50,6 +47,10 @@ app.post('/compose',(req,res)=>{
 })
 app.get('/contact',(req,res)=>{
     res.send('cnjdskns')
+})
+app.get('/data',async (req,res)=>{
+    
+    res.send(await blog.find())
 })
 
 app.get('/:l',async (req,res)=>{
